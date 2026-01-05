@@ -134,7 +134,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    - The plan should reference similar code - read those files first
    - Match naming conventions exactly
    - Reuse existing components where possible
-   - Follow project coding standards (see CLAUDE.md)
+   - Follow project coding standards (see GEMINI.md)
    - When in doubt, grep for similar implementations
 
 4. **Test Continuously**
@@ -169,7 +169,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    # Run full test suite (use project's test command)
    # Examples: bin/rails test, npm test, pytest, go test, etc.
 
-   # Run linting (per CLAUDE.md)
+   # Run linting (per GEMINI.md)
    # Use linting-agent before pushing to origin
    ```
 
@@ -178,7 +178,6 @@ This command takes a work document (plan, specification, or todo file) and execu
    Use for complex, risky, or large changes:
 
    - **code-simplicity-reviewer**: Check for unnecessary complexity
-   - **kieran-rails-reviewer**: Verify Rails conventions (Rails projects)
    - **performance-oracle**: Check for performance issues
    - **security-sentinel**: Scan for security vulnerabilities
    - **cora-test-reviewer**: Review test quality (Rails projects with comprehensive test coverage)
@@ -187,7 +186,6 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    ```
    Task(code-simplicity-reviewer): "Review changes for simplicity"
-   Task(kieran-rails-reviewer): "Check Rails conventions"
    ```
 
    Present findings to user and address critical issues.
@@ -215,9 +213,9 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    Brief explanation if needed.
 
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   🤖 Generated with Gemini
 
-   Co-Authored-By: Claude <noreply@anthropic.com>
+   Co-Authored-By: Gemini
    EOF
    )"
    ```
@@ -228,7 +226,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    **Step 1: Start dev server** (if not running)
    ```bash
-   bin/dev  # Run in background
+   npm run dev
    ```
 
    **Step 2: Capture screenshots with agent-browser CLI**
@@ -277,9 +275,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    ## Figma Design
    [Link if applicable]
 
-   ---
-
-   [![Compound Engineered](https://img.shields.io/badge/Compound-Engineered-6366f1)](https://github.com/EveryInc/compound-engineering-plugin) 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   🤖 Generated with Gemini
    EOF
    )"
    ```

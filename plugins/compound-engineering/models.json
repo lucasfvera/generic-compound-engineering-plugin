@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "active_provider": "google",
+  "providers": {
+    "google": {
+      "fast": "gemini-1.5-flash",
+      "balanced": "gemini-1.5-flash",
+      "powerful": "gemini-1.5-pro",
+      "reasoning": "gemini-2.0-flash-thinking-exp-1219"
+    },
+    "anthropic": {
+      "fast": "claude-3-haiku-20240307",
+      "balanced": "claude-3-5-sonnet-20241022",
+      "powerful": "claude-3-5-sonnet-20241022",
+      "reasoning": "claude-3-5-sonnet-20241022"
+    }
+  },
+  "capability_map": {
+    "default": "balanced",
+    "code_review": "powerful",
+    "architectural_design": "reasoning",
+    "simple_task": "fast"
+  }
+}

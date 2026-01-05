@@ -10,6 +10,8 @@ argument-hint: "[feature description, bug report, or improvement idea]"
 
 **Note: The current year is 2026.** Use this when dating plans and searching for recent documentation.
 
+When asked to run an agent, you should run a workflow from ./agents/(agent) (e.g. if asked to run agent repo-research-analyst, look for it in the directory ./agents/)
+
 Transform feature descriptions, bug reports, or improvement ideas into well-structured markdown files issues that follow project conventions and best practices. This command provides flexible detail levels to match your needs.
 
 ## Feature Description
@@ -116,7 +118,7 @@ After all research steps complete, consolidate findings:
 - **Include relevant institutional learnings** from `docs/solutions/` (key insights, gotchas to avoid)
 - Note external documentation URLs and best practices (if external research was done)
 - List related issues or PRs discovered
-- Capture CLAUDE.md conventions
+- Note any team conventions discovered in `AGENTS.md` or team documentation
 
 **Optional validation:** Briefly summarize findings and ask if anything looks off or missing before proceeding to planning.
 
@@ -500,7 +502,7 @@ After writing the plan file, use the **AskUserQuestion tool** to present these o
 2. **Run `/deepen-plan`** - Enhance each section with parallel research agents (best practices, performance, UI)
 3. **Run `/plan_review`** - Get feedback from reviewers (DHH, Kieran, Simplicity)
 4. **Start `/workflows:work`** - Begin implementing this plan locally
-5. **Start `/workflows:work` on remote** - Begin implementing in Claude Code on the web (use `&` to run in background)
+<!-- 5. **Start `/workflows:work` on remote** - Begin implementing in Claude Code on the web (use `&` to run in background) -->
 6. **Create Issue** - Create issue in project tracker (GitHub/Linear)
 7. **Simplify** - Reduce detail level
 
@@ -509,7 +511,7 @@ Based on selection:
 - **`/deepen-plan`** → Call the /deepen-plan command with the plan file path to enhance with research
 - **`/plan_review`** → Call the /plan_review command with the plan file path
 - **`/workflows:work`** → Call the /workflows:work command with the plan file path
-- **`/workflows:work` on remote** → Run `/workflows:work docs/plans/<plan_filename>.md &` to start work in background for Claude Code web
+<!-- - **`/workflows:work` on remote** → Run `/workflows:work plans/<issue_title>.md &` to start work in background for Claude Code web -->
 - **Create Issue** → See "Issue Creation" section below
 - **Simplify** → Ask "What should I simplify?" then regenerate simpler version
 - **Other** (automatically provided) → Accept free text for rework or specific changes
@@ -520,9 +522,9 @@ Loop back to options after Simplify or Other changes until user selects `/workfl
 
 ## Issue Creation
 
-When user selects "Create Issue", detect their project tracker from CLAUDE.md:
+When user selects "Create Issue", detect their project tracker from GEMINI.md:
 
-1. **Check for tracker preference** in user's CLAUDE.md (global or project):
+1. **Check for tracker preference** in user's GEMINI.md (global or project):
    - Look for `project_tracker: github` or `project_tracker: linear`
    - Or look for mentions of "GitHub Issues" or "Linear" in their workflow section
 
@@ -542,7 +544,7 @@ When user selects "Create Issue", detect their project tracker from CLAUDE.md:
 
 4. **If no tracker configured:**
    Ask user: "Which project tracker do you use? (GitHub/Linear/Other)"
-   - Suggest adding `project_tracker: github` or `project_tracker: linear` to their CLAUDE.md
+   - Suggest adding `project_tracker: github` or `project_tracker: linear` to their GEMINI.md
 
 5. **After creation:**
    - Display the issue URL
