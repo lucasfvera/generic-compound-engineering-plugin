@@ -10,6 +10,8 @@ argument-hint: "[feature description, bug report, or improvement idea]"
 
 **Note: The current year is 2026.** Use this when dating plans and searching for recent documentation.
 
+**THIS IS VERY IMPORTANT** If not running in /plan mode, switch to /plan mode.
+
 When asked to run an agent, you should run a workflow from ./agents/(agent) (e.g. if asked to run agent repo-research-analyst, look for it in the directory ./agents/)
 
 Transform feature descriptions, bug reports, or improvement ideas into well-structured markdown files issues that follow project conventions and best practices. This command provides flexible detail levels to match your needs.
@@ -522,9 +524,9 @@ Loop back to options after Simplify or Other changes until user selects `/workfl
 
 ## Issue Creation
 
-When user selects "Create Issue", detect their project tracker from GEMINI.md:
+When user selects "Create Issue", detect their project tracker from CURSOR.md:
 
-1. **Check for tracker preference** in user's GEMINI.md (global or project):
+1. **Check for tracker preference** in user's CURSOR.md (global or project):
    - Look for `project_tracker: github` or `project_tracker: linear`
    - Or look for mentions of "GitHub Issues" or "Linear" in their workflow section
 
@@ -544,7 +546,7 @@ When user selects "Create Issue", detect their project tracker from GEMINI.md:
 
 4. **If no tracker configured:**
    Ask user: "Which project tracker do you use? (GitHub/Linear/Other)"
-   - Suggest adding `project_tracker: github` or `project_tracker: linear` to their GEMINI.md
+   - Suggest adding `project_tracker: github` or `project_tracker: linear` to their CURSOR.md
 
 5. **After creation:**
    - Display the issue URL
